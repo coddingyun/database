@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Room Finder</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/start.css">
+</head>
+<body>
+  <div class="logo-metabar">
+    <div class="title-and-description">
+      <img src="img/logo.PNG" class="logo-image">
+    </div>
+    <div class = "metabar">
+      <p class = "phrase">We can find the best room for you</p>
+      <a href="imprint.html">Contact address & Disclaimer</a>
+    </div>
+    <div class="search-form">
+      <p class = "phrase">Enter the expected number of people and date</p>
+      <!-- Get the input of capacity and date from the user by using a form. The form should be sent to the search.php script. -->
+      <form action="php/search.php" method="post">
+        <p>people: <input type="number" name="capacity" placeholder="number of people"></p>
+        date: <input type="date" name="date" placeholder="date">
+        <input type="submit" value="Search">
+      </form>
+    </div>
+  </div>
+
+  <div class="nav-body">
+    <div class="about-nav">
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><a href="index.html">Home</a></li>
+        <li role="presentation"><a href="page/find-room.html">Find room</a></li>
+        <li role="presentation"><a href="page/mypage.html">My page</a></li>
+        <li role="presentation"><a href="maintain.html">Maintenance page</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <div class="find-room-description">
+        <h2 class = "toborder"> "Which room do you want to register?" </h2>
+        <h5 class="description"> Just enter the expected number of people and day </h5> 
+        <div class="image-of-rooms">
+          <img src="img/classroom.jpg" class="images">
+          <img src="img/gym.jpg" class="images">
+          <img src="img/lab.jpg" class="images">
+        </div>
+        <div class = "button-group">
+          <button onclick="location.href='page/find-room.html'" type="button" class="btn btn-default btn-lg">
+            <span class = "button-name">Find room</span> 
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </div> 
+      </div>
+      <div>
+        <h2> "Do you want to check your timetable?" </h2>
+        <div class="image-of-rooms">
+          <img src="img/table.PNG" class="images">
+        </div>
+        <div class = "button-group">
+          <button type="button" class="btn btn-default btn-lg" onclick="location.href='page/timetable.html'">
+            <span class = "button-name">Timetable</span> 
+            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<?
+// make log file
+$logfile = fopen("log.txt", "a");
+fwrite($logfile, "search.php
+
+?>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Room</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/find-room.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+  <h1>Find Room</h1>
+  <div class="find-room">
+    <p class = "phrase">Enter the expected number of people and date</p>
+    <form action="../php/search.php" method="post">
+        <p>people: <input type="number" id="autocomplete" name="capacity" placeholder="number of people"></p>
+        <p>date: <input type="text" id="date" name="date" placeholder="YYYY-MM-DD"></p>
+        <p><input type="submit" value="Search"></p>
+    </form>
+    </div>
+
+    <script>
+      $( "#autocomplete" ).autocomplete({
+            source: "database.php",
+            minLength: 0
+      }).focus(function(){            
+          $(this).autocomplete("search");
+      });
+      $( "#date" ).autocomplete({
+            source: "date.php",
+            minLength: 0
+      }).focus(function(){            
+          $(this).autocomplete("search");
+      }); 
+    </script>
+</body>
+</html>

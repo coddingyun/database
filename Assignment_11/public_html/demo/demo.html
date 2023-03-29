@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>autocomplete demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+<label for="demo">Select the capacity: </label>
+<input id="demo">
+(This is the form following the example in the document)
+<br>
+ 
+<label for="autocomplete">Select the capacity: </label>
+<input id="autocomplete">
+(This is the form connecting to the database)
+<script>
+    $( "#demo" ).autocomplete({
+    source: ["25","34","100","26","30","12","40","10","17","2"]
+    });
+    $( "#autocomplete" ).autocomplete({
+            source: "database.php",
+            minLength: 0
+    }).focus(function(){            
+        $(this).autocomplete("search");
+    });
+</script>
+ 
+</body>
+</html>

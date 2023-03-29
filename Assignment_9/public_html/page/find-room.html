@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Room</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/find-room.css">
+</head>
+<body>
+  <h1>Find Room</h1>
+  <div class="find-room">
+    <p class = "phrase">Enter the expected number of people and date</p>
+    <form action="../php/search.php" method="post">
+        <p>people: <input type="number" name="capacity" placeholder="number of people"></p>
+        <p>date: <input type="date" name="date" placeholder="date"></p>
+        <p><input type="submit" value="Search"></p>
+    </form>
+    </div>
+</body>
+</html>
